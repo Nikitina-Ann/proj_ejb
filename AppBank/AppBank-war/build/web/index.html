@@ -5,26 +5,26 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <title>TODO supply a title</title>
+    <title>Вход в систему</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <p>Пожалуйста, введите свой ID.</p>
-        <form action="index.jsp" method="POST">
-        <p>Клиент: <input type="text" name="client" value="" /></p>
-        </form>
-        <%
-            String clientId = request.getParameter("client"); 
-        %>
-        <form action="index.jsp" method="POST">
-        <p>Менеджер: <input type="text" name="firstName1" value="" /></p>
-        </form>
+        Введите ваш id:
+        <BR>
+        <FORM ACTION="clients.jsp" METHOD="POST">
+            <INPUT TYPE="TEXT" NAME="clientId">
+            <INPUT TYPE="SUBMIT" value="Клиент">
+        </FORM>
         
-        <form action="index.jsp" method="POST">
-        <p>Банкир: <input type="text" name="firstName1" value="" /></p>
-        </form>
-        <p><a href="clients.jsp?id=${clientId}">Return</a></p>
+        <FORM ACTION="financiers.jsp" METHOD="POST">
+            <INPUT TYPE="TEXT" NAME="financierId">
+            <INPUT TYPE="SUBMIT" value="Финансист">
+        </FORM>
+        
+        <FORM ACTION="managers.jsp" METHOD="POST">
+            <INPUT TYPE="TEXT" NAME="managerId">
+            <INPUT TYPE="SUBMIT" value="Менеджер">
+        </FORM>
     </body>
 </html>
