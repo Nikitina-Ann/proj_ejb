@@ -188,7 +188,14 @@ public class Specialoffers implements Serializable {
 ```
 ###Слой представления
 Слой представлен представлен страницами jsp.Для каждой роли реализовано по две страницы, например: client.jsp, clientAction.jsp.    
-Страница client.jsp отображает web-страницу клиента. При запросе от пользователя выполнения действий, полученные данные с формы передаются на страницу clientAction.jsp. На странице clientAction.jsp выполняются заданые пользователем действия и происходит возврат на страницу client.jsp. Также для страниц manager.jsp, managerAction.jsp, financier.jsp, financierAction.jsp.  Скриншоты web-страниц представлены на рисунках ниже.     
+Страница client.jsp отображает web-страницу клиента. При запросе от пользователя выполнения действий, полученные данные с формы передаются на страницу clientAction.jsp. На странице clientAction.jsp выполняются заданые пользователем действия и происходит возврат на страницу client.jsp. Также для страниц manager.jsp, managerAction.jsp, financier.jsp, financierAction.jsp.  Скриншоты web-страниц представлены на рисунках ниже.    
+[Страница клиента, 1 вкладка] (https://github.com/Nikitina-Ann/proj_ejb/blob/master/images/client1.png)   
+[Страница клиента, 2 вкладка] (https://github.com/Nikitina-Ann/proj_ejb/blob/master/images/client2.png)   
+[Страница финансиста, 1 вкладка] (https://github.com/Nikitina-Ann/proj_ejb/blob/master/images/finacier1.png)   
+[Страница финансиста, 2 вкладка] (https://github.com/Nikitina-Ann/proj_ejb/blob/master/images/financiert2.png)   
+[Страница менеджера, 1 вкладка] (https://github.com/Nikitina-Ann/proj_ejb/blob/master/images/manager1.png)   
+[Страница менеджера, 2 вкладка] (https://github.com/Nikitina-Ann/proj_ejb/blob/master/images/manager2.png)   
+[Страница менеджера, 3 вкладка] (https://github.com/Nikitina-Ann/proj_ejb/blob/master/images/manager3.png)   
 ###Тестирование
 **Страница клиента**
 <table>
