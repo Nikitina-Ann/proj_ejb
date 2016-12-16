@@ -378,7 +378,24 @@ public class Specialoffers implements Serializable {
 * Чтобы менеджеру заключить договор по специальному предложению, необходимо выбрать в талице специальное предложение и нажать кнопку "Заключить договор". При корректных данных (все поля были выбраны, ответ клиента по специальному предложению положительный и договор еще не заключен) система заключает договор, иначе отправляется сообщение об ошибке.       
 * Чтобы вернуться на страницу входа в систему, необходимо нажать на "Вернуться к странице входа в систему".    
 ##Инструкция системного администратора
-
+1. Cкачать и настроить сервер glassfish.
+2. В консоле администрирования создать новые JDBC Connection Pools и JDBC Resources, как показано на рисунках ниже.
+3. Скачать архив AppBankForAdmin и распаковать его.
+4. Создать базу данных MySQL, запустив bd.sql
+5. В файле AppBank/dist/gfdeploy/AppBank/AppBank-ejb_jar/META-INF/glassfish-resources.xml прописать название БД MySQL, имя пользователя, пароль.
+6. Запустить script.sh указав в качестве аргумента путь к серверу glassfish. Пример
+```
+ann@ann-K72JU:~/AppBankForAdmin$ ./script.sh ~/glassfish4.1.0/
+Waiting for domain1 to start ...............
+Successfully started the domain : domain1
+domain  Location: /home/ann/glassfish4.1.0/glassfish/domains/domain1
+Log File: /home/ann/glassfish4.1.0/glassfish/domains/domain1/logs/server.log
+Admin Port: 4848
+Command start-domain executed successfully.
+Application deployed with name AppBank.
+Command deploy executed successfully.
+```
+Сервер успешно запущен, открываем в браузере адрес http://localhost:8080/AppBank-war. Приложение запущено.
 
 ##Вывод
 В рамках курсовой работы были изучны принципы работы с технологией EJB, а также создание распределенных web-приложений.    
