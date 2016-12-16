@@ -30,13 +30,13 @@
             InitialContext ic = new InitialContext();
             ManagerSessionBeanLocal ejbRef = (ManagerSessionBeanLocal)ic.lookup("java:global/AppBank/AppBank-ejb/ManagerSessionBean!appBank.bean.ManagerSessionBeanLocal");
             if (request.getParameter("managerId") == null) {
-                out.println("Please enter your id.");
+                out.println("Введите корректный id!");
                 return;
             } else {
                 id = Integer.parseInt(request.getParameter("managerId"));
                 manager = ejbRef.getManagerById(id);
                 if (manager == null){
-                System.out.println("Нет такого клиента %: ");
+                out.println("Введите корректный id!");
                 return;
             }
                 bids = manager.getBids();
@@ -46,18 +46,17 @@
                 specialoffers = ejbRef.getAllSpecialoffers();
                 clientOffers = ejbRef.getAllClientOffers();
             }
-            } catch (NamingException e) {
-                System.out.println("Problem looking up : " + e);
+            } catch (Exception e) {
+                out.println("Введите корректный id!");
                 return;
             }
 
         %>
        
-        <body onLoad="JavaScript:checkRefresh(<%=id%>);">
+        <body>
         <p>Здравствуйте, <%=manager.getName()%>!</p>
         <ul id='tabs' class="tabss">
             <li><a href='#tab1'>Заявки.</a></li>
-            <li><a href='#tab2'>Заявки на рестр.</a></li>
             <li><a href='#tab3'>Специальные предложения</a></li>
             <li><a href='#tab4'>Принятые специальные предложения</a></li>
         </ul>
@@ -110,37 +109,6 @@
         </c:if>
         
         </div>
-              
-            
-        <div id='tab2' class="tab_content">
-            <h3>Заявки на реструктуризацию</h3>
-            <table border="1" cellpadding="5">
-            <tr>
-                <th>Дата</th>
-                <th>Клиент</th>
-                <th>Рейтинг</th>
-                <th>Доход</th>
-                <th>Остаток суммы</th>
-                <th>Причина</th>
-                <th>Процент (старое)</th>
-                <th>Срок(старое)</th>
-            </tr> 
-            <c:forEach items="<%= restrBids%>" var="restrBid">
-                <tr>
-                    <td>${ restrBid.getDate() }</td>
-                    <td>${ restrBid.getBid().getClient().getName() }</td>
-                    <td>${ restrBid.getBid().getClient().getRating() }</td>
-                    <td>${ restrBid.getBid().getClient().getRevenue() }</td>
-                    <td>${ restrBid.getBid().getAgreement().getResidualAmount() }</td>
-                    <td>${ restrBid.getDoc() }</td>
-                    <td>${ restrBid.getBid().getResponseFinancier().getPersent() }</td>
-                    <td>${ restrBid.getBid().getResponseFinancier().getTime() }</td>
-                </tr>
-            </c:forEach>
-        </table>
-        </div>
-        
-            
             
          <div id='tab3' class="tab_content">
          <form action="actionManager.jsp">
@@ -170,9 +138,6 @@
             </c:forEach>
         </table>
         </form>
-        <c:if test= "<%=request.getParameter("isSendSpecialOffer")!= null && !Boolean.parseBoolean(request.getParameter("isSendSpecialOffer"))%>">
-            <script>alert("Специальное предложение клиенту не было отправлено!");</script>
-        </c:if>   
         </div>
          
             
@@ -208,16 +173,7 @@
         </c:if>  
         </div>
             
-        <p><a href="registr.jsp">Вернуться к странице входа в систему</a></p>
-        
-        <script>     
-        function checkRefresh(id)
-        {   
-            setTimeout(function(){ 
-                window.location.href = 'managers.jsp?managerId='+id;
-            }, 600);
-        }  
-        </script>
+        <p><a href="index.html">Вернуться к странице входа в систему</a></p>
         
     </body>
 </html>

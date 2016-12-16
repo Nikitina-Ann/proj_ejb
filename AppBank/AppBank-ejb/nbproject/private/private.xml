@@ -3,15 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/ann/NetBeansProjects/AppBank/AppBank-ejb/src/java/appBank/bean/ClientSessionBean.java</file>
+            <file>file:/home/ann/NetBeansProjects/AppBank/AppBank-ejb/src/java/appBank/entity/Agreements.java</file>
             <file>file:/home/ann/NetBeansProjects/AppBank/AppBank-ejb/src/java/appBank/entity/ClientOffer.java</file>
-            <file>file:/home/ann/NetBeansProjects/AppBank/AppBank-ejb/src/java/appBank/entity/Clients.java</file>
-            <file>file:/home/ann/NetBeansProjects/AppBank/AppBank-ejb/src/java/appBank/bean/FinancierSessionBean.java</file>
+            <file>file:/home/ann/NetBeansProjects/AppBank/AppBank-ejb/src/java/appBank/bean/ClientSessionBean.java</file>
             <file>file:/home/ann/NetBeansProjects/AppBank/AppBank-ejb/src/java/appBank/entity/ResponseFinancier.java</file>
-            <file>file:/home/ann/NetBeansProjects/AppBank/AppBank-ejb/src/java/appBank/bean/ManagerSessionBean.java</file>
+            <file>file:/home/ann/NetBeansProjects/AppBank/AppBank-ejb/src/java/appBank/entity/Specialoffers.java</file>
             <file>file:/home/ann/NetBeansProjects/AppBank/AppBank-ejb/src/java/appBank/entity/Financiers.java</file>
-            <file>file:/home/ann/NetBeansProjects/AppBank/AppBank-ejb/src/java/appBank/bean/FinancierSessionBeanLocal.java</file>
+            <file>file:/home/ann/NetBeansProjects/AppBank/AppBank-ejb/src/java/appBank/entity/Managers.java</file>
             <file>file:/home/ann/NetBeansProjects/AppBank/AppBank-ejb/src/java/appBank/entity/Bids.java</file>
+            <file>file:/home/ann/NetBeansProjects/AppBank/AppBank-ejb/src/conf/persistence.xml</file>
             <file>file:/home/ann/NetBeansProjects/AppBank/AppBank-ejb/src/java/appBank/bean/ClientSessionBeanLocal.java</file>
         </group>
     </open-files>

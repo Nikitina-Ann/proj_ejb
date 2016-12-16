@@ -6,10 +6,7 @@
 package appBank.bean;
 
 import appBank.entity.*;
-import java.util.List;
-import java.util.Set;
 import javax.ejb.Local;
-import javax.persistence.Query;
 
 /**
  *

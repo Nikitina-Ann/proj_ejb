@@ -33,31 +33,30 @@
             InitialContext ic = new InitialContext();
             FinancierSessionBeanLocal ejbRef = (FinancierSessionBeanLocal)ic.lookup("java:global/AppBank/AppBank-ejb/FinancierSessionBean!appBank.bean.FinancierSessionBeanLocal");
             if (request.getParameter("financierId") == null) {
-                out.println("Please enter your id.");
+                out.println("Введите корректный id!");
                 return;
             } else {
                 id = Integer.parseInt(request.getParameter("financierId"));
                 financier = ejbRef.getFinancierById(id);
                 if (financier == null){
-                System.out.println("Нет такого клиента: ");
+                out.println("Введите корректный id!");
                 return;
             }
                 bids = financier.getBidsWithoutResponseFinancier();
                 restrBids = financier.getRestrBids();
                 specialoffers = financier.getSpecialoffers();
             }
-            } catch (NamingException e) {
-                System.out.println("Problem looking up : " + e);
+            } catch (Exception e) {
+                out.println("Введите корректный id!");
                 return;
             }
 
         %>
-        <body onLoad="JavaScript:checkRefresh(<%=id%>);">
+        <body>
         <p>Здравствуйте, <%=financier.getName()%>!</p>
         <ul id='tabs' class="tabss">
             <li><a href='#tab1'>Заявки.</a></li>
-            <li><a href='#tab2'>Заявки на рестр.</a></li>
-            <li><a href='#tab3'>Спец. предлож.</a></li>
+            <li><a href='#tab3'>Специальные предложения</a></li>
         </ul>
        <div id='tab1' class="tab_content">
         <form action="actionFinancier.jsp">     
@@ -94,34 +93,6 @@
         </c:if>
         </div>
         
-        <div id='tab2' class="tab_content">
-            <h3>Заявки на реструктуризацию</h3>
-            <table border="1" cellpadding="5">
-            <tr>
-                <th>Дата</th>
-                <th>Клиент</th>
-                <th>Рейтинг</th>
-                <th>Доход</th>
-                <th>Остаток суммы</th>
-                <th>Причина</th>
-                <th>Процент (старое)</th>
-                <th>Срок(старое)</th>
-            </tr> 
-            <c:forEach items="<%= restrBids%>" var="restrBid">
-                <tr>
-                    <td>${ restrBid.getDate() }</td>
-                    <td>${ restrBid.getBid().getClient().getName() }</td>
-                    <td>${ restrBid.getBid().getClient().getRating() }</td>
-                    <td>${ restrBid.getBid().getClient().getRevenue() }</td>
-                    <td>${ restrBid.getBid().getAgreement().getResidualAmount() }</td>
-                    <td>${ restrBid.getDoc() }</td>
-                    <td>${ restrBid.getBid().getResponseFinancier().getPersent() }</td>
-                    <td>${ restrBid.getBid().getResponseFinancier().getTime() }</td>
-                </tr>
-            </c:forEach>
-        </table>
-        </div>
-        
         <div id='tab3' class="tab_content">
         <form action="actionFinancier.jsp">     
         <input type="hidden" name="financierId" value=<%=Integer.toString(id)%>>
@@ -150,14 +121,8 @@
         </c:if>
         </div>
        
-        <p><a href="registr.jsp">Вернуться к странице входа в систему</a></p>
+        <p><a href="index.html">Вернуться к странице входа в систему</a></p>
         
-        <script>     
-        function checkRefresh(id)
-        {
-            //setTimeout(function(){ window.location.href = 'financiers.jsp?financierId='+id; }, 300);
-        }  
-    </script>
     </body>
 </html>
 

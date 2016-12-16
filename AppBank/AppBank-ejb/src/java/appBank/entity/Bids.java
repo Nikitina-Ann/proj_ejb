@@ -5,11 +5,9 @@
  */
 package appBank.entity;
 
-import appBank.entity.Agreements;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
